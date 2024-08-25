@@ -17,7 +17,7 @@ function Hero() {
     const linkedInIcon = theme === 'light' ? linkedinLight : linkedinDark;
 
   return (
-    <section id="hero">
+    <section id="hero" className={styles.container}>
       <div className={styles.colorModeContainer}>
         <img className={styles.hero} src={profileImg} alt="Profile Image" />
         <img className={styles.colorMode} src={themeIcon} alt="Color Mode" onClick={toggleTheme}/>
@@ -32,13 +32,13 @@ function Hero() {
 
         <span>
             <a href="#" target="_blank">
-                <img src={InstagramIcon} alt="Instagram" style={{maxWidth: '20px', maxHeight: '20px'}}/>
+                <img src={InstagramIcon} alt="Instagram" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
             <a href="#" target="_blank">
-                <img src={githubIcon} alt="Github Icon" style={{maxWidth: '20px', maxHeight: '20px'}}/>
+                <img src={githubIcon} alt="Github Icon" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
             <a href="#" target="_blank">
-                <img src={linkedInIcon} alt="LinkedIn icon" style={{maxWidth: '20px', maxHeight: '20px'}}/>
+                <img src={linkedInIcon} alt="LinkedIn icon" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
         </span>
 
