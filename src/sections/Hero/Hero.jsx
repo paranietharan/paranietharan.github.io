@@ -42,7 +42,7 @@ function Hero() {
             </a>
         </span>
 
-        <p>With a passion for developing modern React web apps for commercial
+        <p className={styles.description}>With a passion for developing modern React web apps for commercial
         businesses.</p>
 
         <a>
