@@ -1,5 +1,6 @@
 import styles from "./Hero.module.css";
-import profileImg from "../../assets/hero-img.png";
+import profileImgWhite from "../../assets/profile-img-white.png";
+import profileImgBlack from "../../assets/profile-img-black.jpg";
 import InstagramIcon from "../../assets/instagram.svg";
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
@@ -15,6 +16,7 @@ function Hero() {
     const themeIcon = theme === "light" ? sunIcon : moonIcon;
     const githubIcon = theme === 'light' ? githubLight : githubDark;
     const linkedInIcon = theme === 'light' ? linkedinLight : linkedinDark;
+    const profileImg = theme === 'light' ? profileImgWhite : profileImgBlack;
 
   return (
     <section id="hero" className={styles.container}>
@@ -34,15 +36,15 @@ function Hero() {
             <a href="#" target="_blank">
                 <img src={InstagramIcon} alt="Instagram" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
-            <a href="#" target="_blank">
+            <a href="https://github.com/paranietharan" target="_blank">
                 <img src={githubIcon} alt="Github Icon" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
-            <a href="#" target="_blank">
+            <a href="https://www.linkedin.com/in/paranietharan-palasuntharam/" target="_blank">
                 <img src={linkedInIcon} alt="LinkedIn icon" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
         </span>
 
-        <p className={styles.description}>With a passion for developing modern React web apps for commercial
+        <p className={styles.description}>developing modern React web apps for commercial
         businesses.</p>
 
         <a>
