@@ -17,10 +17,10 @@ function Projects(){
             </div>
 
             <div className="ProjectsContainer">
-                <a href='https://github.com/paranietharan74/library-management-system-web-application' target='_blank'>
+                <a href='https://github.com/paranietharan/Automatic-Sandwich-Making-Machine.git' target='_blank'>
                     <img src={PortfoioWebsite} alt="Project img" srcset="" className={styles.hover} />
-                    <h3>Portfolio website</h3>
-                    <p>React js Portfolio website</p>
+                    <h3>Automatic Sandwich Making Machine</h3>
+                    <p>First year group harware project</p>
                 </a>
             </div>
         </section>
