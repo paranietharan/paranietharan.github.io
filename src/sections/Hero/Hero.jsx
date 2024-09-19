@@ -44,12 +44,11 @@ function Hero() {
             </a>
         </span>
 
-        <p className={styles.description}>developing modern React web apps for commercial
-        businesses.</p>
+        <p className={styles.description}>developing modern React web apps for commercial businesses.</p>
 
-        <a>
+        {/* <a>
           <button className="hover">Resume</button>
-        </a>
+        </a> */}
       </div>
     </section>
   );

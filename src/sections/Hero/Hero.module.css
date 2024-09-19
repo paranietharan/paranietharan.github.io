@@ -69,7 +69,7 @@
 }
 
 .description {
-  max-width: 24ch;
+  max-width: 40ch;
 }
 
 .info {
@@ -88,6 +88,10 @@
       max-width: 350px;
       width: 350px;
     }
+  }
+
+  .description {
+    max-width: 24ch;
   }
 }
 
