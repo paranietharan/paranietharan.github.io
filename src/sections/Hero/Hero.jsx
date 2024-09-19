@@ -44,10 +44,9 @@ function Hero() {
             </a>
         </span>
 
-        <p className={styles.description}>developing modern React web apps for commercial
-        businesses.</p>
+        <p className={styles.description}>developing modern React web apps for commercial businesses.</p>
 
-        {/* <a href="/public/Paranietharan_Palasuntharam.pdf" download>
+        {/* <a>
           <button className="hover">Resume</button>
         </a> */}
       </div>
