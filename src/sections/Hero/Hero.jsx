@@ -1,7 +1,8 @@
 import styles from "./Hero.module.css";
 import profileImgWhite from "../../assets/profile-img-white.png";
 import profileImgBlack from "../../assets/profile-img-black.jpg";
-import InstagramIcon from "../../assets/instagram.svg";
+import EmailDark from "../../assets/email-dark.png";
+import EmailLight from "../../assets/email-light.png";
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
@@ -17,6 +18,7 @@ function Hero() {
     const githubIcon = theme === 'light' ? githubLight : githubDark;
     const linkedInIcon = theme === 'light' ? linkedinLight : linkedinDark;
     const profileImg = theme === 'light' ? profileImgWhite : profileImgBlack;
+    const EmailIcon = theme === 'light' ? EmailDark : EmailLight;
 
   return (
     <section id="hero" className={styles.container}>
@@ -30,11 +32,11 @@ function Hero() {
             <br />
             Palasuntharam
         </h1>
-        <h2>Software Developper</h2>
+        <h2>Software Developer</h2>
 
         <span>
-            <a href="#" target="_blank">
-                <img src={InstagramIcon} alt="Instagram" style={{maxWidth: '40px', maxHeight: '40px'}}/>
+            <a href="mailto:paranietharan20@gmail.com" target="_blank">
+                <img src={EmailIcon} alt="Instagram" style={{maxWidth: '40px', maxHeight: '40px'}}/>
             </a>
             <a href="https://github.com/paranietharan" target="_blank">
                 <img src={githubIcon} alt="Github Icon" style={{maxWidth: '40px', maxHeight: '40px'}}/>
