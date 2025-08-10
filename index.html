@@ -7,224 +7,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paranietharan</title>
     <link rel="icon" href="https://i.ibb.co/zRsTj3p/Frame-1-37.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        class="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        .container {
+            max-width: 900px;
+            width: 90%;
+            padding: 2rem;
+        }
+
+        .profile-section {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .left-side {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .right-side {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-section {
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .about-text {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid #333;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .contact-item:hover {
+            background: #2a2a2a;
+            border-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #64b5f6;
+            min-width: 20px;
+        }
+
+        .contact-text {
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: #64b5f6;
+            color: white;
+            border-color: #64b5f6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(100, 181, 246, 0.3);
+        }
+
+        .social-link.github:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077b5;
+            border-color: #0077b5;
+            box-shadow: 0 6px 20px rgba(0, 119, 181, 0.3);
+        }
+
+        .download-cv-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            border: none;
+            border-radius: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-cv-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-cv-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-cv-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(100, 181, 246, 0.4);
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+        }
+
+        .download-cv-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .download-cv-btn i {
+            font-size: 1.1rem;
+        }
+
+        .cv-section {
+            text-align: center;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .main-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .left-side,
+            .right-side {
+                min-width: unset;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .about-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-text {
+                font-size: 0.95rem;
+            }
+
+            .contact-item {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-item i {
+                font-size: 1rem;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .download-cv-btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Tablet Responsiveness */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 700px;
+                padding: 2.5rem;
+            }
+
+            .main-content {
+                gap: 2.5rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1025px) {
+            .main-content {
+                gap: 4rem;
+            }
+
+            .contact-info {
+                max-width: none;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container>* {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .container>*:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .container>*:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .container>*:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="files/profile-img.jpg" alt="Paranietharan Palasuntharam">
+            </div>
+            <h1>Paranietharan Palasuntharam</h1>
+            <p class="title">Associate Software Engineer</p>
+        </div>
 
-    <!-------------------------- Header Area -------------------------->
-    <header class="header-area">
-        <div class="container">
-            <div class="header">
-
-                <a href="" class="logo">
-                    Paranietharan
-                    <i class="fa fa-bolt"></i>
-                </a>
-
-                <ul class="navbar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-
-                <div class="menu_icon">
-                    <i class="fa fa-bars"></i>
+        <div class="main-content">
+            <div class="left-side">
+                <div class="about-section">
+                    <h2>About Me</h2>
+                    <p class="about-text">
+                        I'm a passionate and aspiring software engineer with a strong desire to create innovative
+                        solutions and push the boundaries of technology. With a deep love for coding and
+                        problem-solving, I am constantly seeking opportunities to learn and grow in this ever-evolving
+                        field.
+                    </p>
                 </div>
 
-            </div>
-        </div>
-    </header>
+                <div class="social-links">
+                    <a href="mailto:paranietharan20@gmail.com" class="social-link email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/paranietharan" class="social-link github" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/paranietharan-palasuntharam/" class="social-link linkedin"
+                        target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="tel:+94769701039" class="social-link phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
 
-    <!-------------------------- Home Page -------------------------->
-    <div class="FirstElement" id="home">
-        <div class="profile-photo">
-            <img src="files/profile-img.jpg" alt="profile picture">
-        </div>
-        <div class="profile-text">
-            <h5>Hi I'm </h5><br>
-            <h1>Paranietharan</h1><br>
-            <p>Welcome to my portfolio website! I'm a passionate and aspiring software engineer with a strong desire to
-                create innovative solutions and push the boundaries of technology.With a deep love for coding and
-                problem-solving, I am constantly seeking opportunities to learn and grow in this ever-evolving field</p>
-
-            <div class="btn-group">
-                <a href="files/Paranietharan_Palasuntharam_SE_Intern_CV.pdf" class="btn   active">Download CV</a>
-                <a href="mailto:paranietharan20@gmail.com" class="btn">Contact</a>
-            </div>
-
-            <div class="social">
-                <a href="mailto:sowndharnewbie@gmail.com"><i class="fa fa-envelope"></i></a>
-                <a href="https://github.com/paranietharan"><i class="fa-brands fa-github"></i></a>
-                <!-- <a href="https://leetcode.com/paranie/"><i class="fa fa-code"></i></a> -->
-                <a href="https://www.linkedin.com/in/paranietharan-palasuntharam/"><i
-                        class="fa-brands fa-linkedin"></i></a>
+                <div class="cv-section">
+                    <a href="files/Paranietharan_Palasuntharam_SE_Intern_CV.pdf" class="download-cv-btn" download="Paranietharan_Palasuntharam_CV.pdf">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-------------------------- About Section -------------------------->
-    <section class="about-area" id="about">
-        <div class="container">
-            <div class="about">
-
-                <div class="about-content">
-                    <h4>About Me</h4>
-                    <ul>
-                        <li>I am currently in my third year, pursuing a Bachelor's Degree in Information Technology at
-                            the University of Moratuwa. My academic journey has equipped me with strong technical skills
-                            in software development, particularly in technologies like React.js, Spring Boot, and MySQL.
-                        </li>
-                        <li>With a passion for web development and backend engineering, I am always eager to apply my
-                            knowledge in real-world projects. My experience working on both individual and collaborative
-                            projects has strengthened my problem-solving and teamwork abilities.</li>
-                        <li>I am committed to continuous learning and staying adaptable in the fast-paced world of
-                            technology. I actively explore new tools and frameworks to enhance my skill set. Feel free
-                            to browse my work or reach out if you'd like to collaborate on innovative projects.</li>
-                    </ul>
-                </div>
-
-                <div class="about-skills">
-                    <ul>
-                        <li>Name: Paranietharan</li>
-                        <!-- <li>Age:20</li> -->
-                        <li>From: Colombo, Srilanka</li>
-                        <li>Email: paranietharan20@gmail.com</li>
-                        <li>Availabiltiy: Fulltime</li>
-                        <!-- <li>Experience&lt;1yr</li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="education-content" id="education">
-        <div class="container">
-            <div class="section-header">
-                <h3 class="title">Education</h3>
-                <p>Explore my academic background and hands-on experience</p>
-            </div>
-            <div class="row">
-                <!-- Education -->
-                <div class="timeline-box">
-                    <div class="timeline">
-                        
-                        <!-- Timeline-item -->
-                        <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-title">BSc.(Hons) in Information Technology</h3>
-                            <h4 class="timeline-subtitle">University of Moratuwa, Sri Lanka</h4>
-                            <h4 class="timeline-date"><i class="fa fa-calendar"></i> June 2022 - Present</h4>
-                        </div>
-                        
-                        <!-- Timeline-item -->
-                        <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-title">Advance Level - Mathematics Stream</h3>
-                            <h4 class="timeline-subtitle">Kn/Kilinochchi Maha Vidyalayam</h4>
-                            <h4 class="timeline-date"><i class="fa fa-calendar"></i> 2018 - 2020</h4>
-                        </div>
-                        
-                        <!-- Timeline-item -->
-                        <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-title">Ordinary Level</h3>
-                            <h4 class="timeline-subtitle">Kn/Thiruvaiaru Maha Vidyalayam</h4>
-                            <h4 class="timeline-date"><i class="fa fa-calendar"></i> 2006 - 2017</h4>
-                        </div>
-    
-                        <!-- Experience Placeholder (for future use) -->
-                        <!-- <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-title">Projects & Certifications</h3>
-                            <h4 class="timeline-subtitle">Various Institutions and Platforms</h4>
-                            <h4 class="timeline-date"><i class="fa fa-calendar"></i> Ongoing</h4>
-                            <p class="timeline-text">Explore my personal projects and certifications that demonstrate my learning beyond formal education.</p>
-                        </div> -->
-    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-
-    <!-------------------------- Projects -------------------------->
-    <section class="project-content" id="projects">
-        <div class="container">
-            <div class="project-title">
-                <h4>My Projects</h4>
-                <p>Explore my projects, where technology meets innovation</p>
-            </div>
-            <div class="projects">
-                <!-- 1st Project -->
-                <div class="project">
-                    <i class="fa fa-book"></i>
-                    <h4>Web-based Library Management System</h4>
-                    <p>Developed a full-stack library management system using React.js and Spring Boot, enabling
-                        efficient book tracking, borrowing, and returns for school libraries.</p>
-                </div>
-                <!-- 2nd Project -->
-                <div class="project">
-                    <i class="fa fa-cogs"></i>
-                    <h4>Automatic Sandwich Making Machine</h4>
-                    <p>Engineered an automated sandwich-making machine with Arduino, integrating sensors and motors to
-                        precisely dispense ingredients and streamline the process.</p>
-                </div>
-                <!-- 3rd Project -->
-                <div class="project">
-                    <i class="fa fa-cloud"></i>
-                    <h4>Portfolio Website</h4>
-                    <p>Designed and developed a personal portfolio website using HTML, CSS, and JavaScript, showcasing
-                        my work, educational background, and projects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-------------------------- Contact Me -------------------------->
-
-    <section class="contact-content" id="contact">
-        <div class="container">
-            <div class="contact-title">
-                <h4>Contact Me</h4>
-                <p>Get In Touch</p>
-            </div>
-            <div class="contact">
-                <form name="submitToGoogleSheet">
-                    <input type="text" name="NAME" placeholder="Name" required>
-                    <input type="email" name="EMAIL" placeholder="Email" required>
-                    <input type="text" name="SUBJECT" placeholder="Subject">
-                    <textarea name="MESSAGE" placeholder="Message"></textarea>
-                    <input type="submit" value="Send Message" class="submit">
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-------------------------- JS -------------------------->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
-
-    <!-------------------------- Footer section -------------------------->
-    <footer class="footer">
-        <small class="message">Thanks for visiting and happy coding!</small>
-        <small class="copyright">&copy; Copyright 2024. All rights reserved.</small>
-    </footer>
-
 </body>
 
 </html>
