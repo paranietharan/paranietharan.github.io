@@ -1,89 +1,410 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.2.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.2.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.2.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paranietharan</title>
+    <link rel="icon" href="https://i.ibb.co/zRsTj3p/Frame-1-37.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      });
-    </script>
-  </body>
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            padding: 2rem;
+        }
+
+        .profile-section {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .left-side {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .right-side {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-section {
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .about-text {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid #333;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .contact-item:hover {
+            background: #2a2a2a;
+            border-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #64b5f6;
+            min-width: 20px;
+        }
+
+        .contact-text {
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: #64b5f6;
+            color: white;
+            border-color: #64b5f6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(100, 181, 246, 0.3);
+        }
+
+        .social-link.github:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077b5;
+            border-color: #0077b5;
+            box-shadow: 0 6px 20px rgba(0, 119, 181, 0.3);
+        }
+
+        .download-cv-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            border: none;
+            border-radius: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-cv-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-cv-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-cv-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(100, 181, 246, 0.4);
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+        }
+
+        .download-cv-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .download-cv-btn i {
+            font-size: 1.1rem;
+        }
+
+        .cv-section {
+            text-align: center;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .main-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .left-side,
+            .right-side {
+                min-width: unset;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .about-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-text {
+                font-size: 0.95rem;
+            }
+
+            .contact-item {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-item i {
+                font-size: 1rem;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .download-cv-btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Tablet Responsiveness */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 700px;
+                padding: 2.5rem;
+            }
+
+            .main-content {
+                gap: 2.5rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1025px) {
+            .main-content {
+                gap: 4rem;
+            }
+
+            .contact-info {
+                max-width: none;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container>* {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .container>*:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .container>*:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .container>*:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="files/profile-img.jpg" alt="Paranietharan Palasuntharam">
+            </div>
+            <h1>Paranietharan Palasuntharam</h1>
+            <p class="title">Associate Software Engineer</p>
+        </div>
+
+        <div class="main-content">
+            <div class="left-side">
+                <div class="about-section">
+                    <h2>About Me</h2>
+                    <p class="about-text">
+                        I'm a passionate and aspiring software engineer with a strong desire to create innovative
+                        solutions and push the boundaries of technology. With a deep love for coding and
+                        problem-solving, I am constantly seeking opportunities to learn and grow in this ever-evolving
+                        field.
+                    </p>
+                </div>
+
+                <div class="social-links">
+                    <a href="mailto:paranietharan20@gmail.com" class="social-link email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/paranietharan" class="social-link github" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/paranietharan-palasuntharam/" class="social-link linkedin"
+                        target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="tel:+94769701039" class="social-link phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+
+                <div class="cv-section">
+                    <a href="files/Paranietharan_Palasuntharam_SE_Intern_CV.pdf" class="download-cv-btn" download="Paranietharan_Palasuntharam_CV.pdf">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
