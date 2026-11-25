@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visit Paranietharan’s portfolio at paranietharan.com.">
+  <title>Paranietharan | Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, system-ui, sans-serif;
+      background: #f8f9fc;
+      color: #172034;
+      --accent: #324ad6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0 auto;
+      width: min(76rem, 88%);
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid #cfd4e1;
+      font: .9rem/1.5 ui-monospace, monospace;
+    }
+
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: .5rem;
+      background: var(--accent);
+      color: white;
+      font: italic bold 1.5rem Georgia, serif;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 4rem 0 7rem;
+    }
+
+    h1 {
+      max-width: 100%;
+      margin: 0;
+      font-size: clamp(2rem, 8.7vw, 7.5rem);
+      font-weight: 650;
+      letter-spacing: -.065em;
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    h1 span { color: var(--accent); }
+
+    p {
+      margin: 1.25rem 0 2rem;
+      color: #47536a;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      line-height: 1.6;
+    }
+
+    a {
+      display: inline-block;
+      padding: .9rem 1.4rem;
+      border-radius: .55rem;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover { background: #2337ae; }
+    a:focus-visible { outline: 3px solid #172034; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="monogram" aria-hidden="true">P</span>
+    paranietharan.github.io
+  </header>
+  <main>
+    <h1>Paranietharan<span aria-hidden="true">.</span></h1>
+    <p>My portfolio is at paranietharan.com.</p>
+    <a href="https://paranietharan.com/">Visit my portfolio</a>
+  </main>
+</body>
+</html>
